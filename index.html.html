@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nhà Hàng & Cafe - Đặt Món</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>My Restaurant & Cafe</h1>
+        <button onclick="toggleAdmin()">Chế độ Quản lý</button>
+    </header>
+
+    <main>
+        <section id="admin-section" style="display:none;">
+            <h2>Thêm món mới</h2>
+            <input type="text" id="itemName" placeholder="Tên món">
+            <input type="number" id="itemPrice" placeholder="Giá tiền (VNĐ)">
+            <input type="file" id="itemImage" accept="image/*">
+            <button onclick="addItem()">Lưu món ăn</button>
+        </section>
+
+        <section id="menu-display">
+            <h2>Thực đơn</h2>
+            <div id="menu-container" class="grid-container"></div>
+        </section>
+
+        <section id="cart-section">
+            <h2>Đơn hàng của bạn</h2>
+            <div id="cart-items"></div>
+            <p><strong>Tổng cộng: <span id="total-price">0</span> VNĐ</strong></p>
+            
+            <div id="checkout-form">
+                <input type="text" id="customerName" placeholder="Tên của bạn">
+                <input type="text" id="customerPhone" placeholder="Số điện thoại">
+                <input type="text" id="customerAddress" placeholder="Địa chỉ giao hàng">
+                <button onclick="processOrder()">Đặt hàng ngay</button>
+            </div>
+        </section>
+
+        <section id="qr-section" style="display:none;">
+            <h3>Quét mã để thanh toán</h3>
+            <div id="qr-container"></div>
+            <button onclick="closeQR()">Đã hoàn tất</button>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
